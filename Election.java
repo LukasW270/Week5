@@ -1,3 +1,4 @@
+// import java.lang.Math;
 import java.util.*;
 import java.text.NumberFormat;
 public class Election {
@@ -41,16 +42,19 @@ public class Election {
         int candidate1Total = newYork1 + newJersey1 + connecticut1;
         int candidate2Total = newYork2 + newJersey2 + connecticut2;
         int totalVotes = candidate1Total + candidate2Total;
-        double percentageCandidate1 = candidate1Total * 1.0 / totalVotes * 100;
+        double percentageCandidate1 = candidate1Total * 1.0 / totalVotes;
         double percentageCandidate2 = candidate2Total * 1.0 / totalVotes;
 
         NumberFormat percent = NumberFormat.getPercentInstance();
-        NumberFormat number = NumberFormat.getIntegerInstance();
+        // NumberFormat number = NumberFormat.getIntegerInstance();
 
         
         System.out.println("Candidate\tVotes\tPercentage");
-        System.out.println(candidate1 + "\t\t" + candidate1Total + "\t" + number.format(percentageCandidate1));
+        System.out.println(candidate1 + "\t\t" + candidate1Total + "\t" + percent.format(percentageCandidate1));
         System.out.println(candidate2 + "\t\t" + candidate2Total + "\t" + percent.format(percentageCandidate2));
+
+        // System.out.println(candidate1 + "\t\t" + candidate1Total + "\t" + Math.round(percentageCandidate1) + "%");
+        // System.out.println(candidate2 + "\t\t" + candidate2Total + "\t" + Math.round(percentageCandidate2) + "%");
 
     }
 }
